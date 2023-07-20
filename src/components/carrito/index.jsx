@@ -9,10 +9,10 @@ const Carrito = () => {
         vaciarCarrito()
     }
 
-    const handleSubmit = () => {
-        alert("Formulario enviado")
+    // const handleSubmit = () => {
+    //     alert("Formulario enviado")
 
-    }
+    // }
 
     return (
         < div className="container" >
@@ -31,7 +31,7 @@ const Carrito = () => {
 
             <h2>Precio total: ${precioTotal()} </h2>
             <button onClick={handleVaciar}>Vaciar</button>
-            <Link to="/checkout">Finalizar compra</Link>
+            <Link to="/checkout">Crear orden</Link>
         </div >
     )
 }
