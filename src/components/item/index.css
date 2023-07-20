@@ -1,0 +1,25 @@
+.imgContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.cardContent{
+    width: 300px;
+}
+
+.buttonContainer{
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 5px;
+}
+
+.detailButton{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    font-size: medium;
+    border-radius: 3px;
+    text-decoration: none;
+}
