@@ -30,6 +30,7 @@ const CheckoutForm = ({onConfirm}) => {
             Email
             <input type="text" className="Input" value={email} onChange={({target}) => setEmail(target.value)} />
             </label>
+            <button >Finalizar compra</button>
         </div>
     )
 }
