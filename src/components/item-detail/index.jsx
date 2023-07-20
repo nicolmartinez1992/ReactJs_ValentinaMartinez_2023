@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../item-count';
 import { Link } from 'react-router-dom';
+import "./index.css"
 
 export default function ItemDetail({ img, title, price, description, category, stock, id }) {
     const product = { img, title, price, description, category, stock, id }
@@ -19,7 +20,7 @@ export default function ItemDetail({ img, title, price, description, category, s
         <Card className="card" sx={{ maxWidth: 345 }}>
             <div className="imgContainer">
                 <CardMedia className="cardMedia"
-                    sx={{ height: 200, width: 200 }}
+                    sx={{ height: 200, width: 200, marginTop: "20px" }}
                     image={img}
                 />
             </div>
@@ -37,10 +38,10 @@ export default function ItemDetail({ img, title, price, description, category, s
                     Categoría: {category}
                 </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions style={{display: "flex", justifyContent: "center", marginBottom: "10px"}}>
                 {
                     quantityAdded > 0 ? (
-                        <Link to="/carrito">Terminar compra</Link>
+                        <Link to="/carrito" className="finishButton">Terminar compra</Link>
                     ) : (
                         <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} product={product} />)
                 }

@@ -21,28 +21,30 @@ const ItemListContainer = () => {
     //         console.log(error)
     //     })
     // },[categoryId])
-    
+
     useEffect(() => {
-        const collectionRef = categoryId 
-        ? query(collection(db, "productos"), where('category', '==', categoryId))
-        : collection(db, 'productos')
+        const collectionRef = categoryId
+            ? query(collection(db, "productos"), where('category', '==', categoryId))
+            : collection(db, 'productos')
 
         getDocs(collectionRef)
-        .then(response => {
-            const productsAdapted = response.docs.map(doc => {
-                const data = doc.data()
-                return{id: doc.id, ...data}
+            .then(response => {
+                const productsAdapted = response.docs.map(doc => {
+                    const data = doc.data()
+                    return { id: doc.id, ...data }
+                })
+                setProducts(productsAdapted)
             })
-            setProducts(productsAdapted)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error)
+            })
     }, [categoryId])
 
     return (
         <div>
-            <Title greeting="Bienvenidos a TRACTO!" />
+            <h1 className="productsTitle" style={{
+                textAlign: "center", marginBottom: "50px"
+            }}>PRODUCTOS</h1>
             <ItemList products={products} />
         </div>
     )

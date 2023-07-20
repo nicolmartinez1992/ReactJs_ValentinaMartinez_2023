@@ -11,18 +11,18 @@ const [orderId, setOrderId] = useState ("")
 
 const {carrito, precioTotal, vaciarCarrito} = useContext(CartContext)
 
-const createOrder = async ({names, phone, email}) => {
+const createOrder = async ({name, phone, email}) => {
 setLoading(true)
 
 try {
     const objOrder = {
         buyer: {
-            names, 
+            name, 
             phone, 
             email,
         },
         items: carrito,
-        total: precioTotal,
+        total: precioTotal(),
         date: Timestamp.fromDate(new Date()),
     }
 
@@ -39,9 +39,9 @@ try {
 
     docs.forEach(doc => {
         const dataDoc = doc.data()
-        const stockDb = dataDoc.stockDb
+        const stockDb = dataDoc.stock
         const productsAddedToCart = carrito.find(prod=> prod.id === doc.id)
-        const prodQuantity = productsAddedToCart?.quantity 
+        const prodQuantity = productsAddedToCart?.items 
             if(stockDb >= prodQuantity) {
                 batch.update(doc.ref, {stock: stockDb - prodQuantity})
             } else {
@@ -78,7 +78,7 @@ if(orderId) {
 
 return (
     <div>
-        <h1>Checkout</h1>
+        <h1 style={{textAlign: "center", marginBottom: "50px", marginTop: "50px"}}>Checkout</h1>
         <CheckoutForm onConfirm={createOrder}/>
     </div>
 )

@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 
 export default function MediaCard({ id, img, title, price, stock }) {
     return (
-        <Card className="card" sx={{ maxWidth: 345}}>
+        <Card className="card" sx={{ maxWidth: 345, marginLeft: "10px", marginRight: "20px", marginBottom: "50px"}}>
             <div className="imgContainer">
                 <CardMedia className="cardMedia"
-                    sx={{ height: 200, width: 200 }}
+                    sx={{ height: 200, width: 200,  marginTop: "20px" }}
                     image={img}
                 />
             </div>

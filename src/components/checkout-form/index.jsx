@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./index.css"
 
 
 const CheckoutForm = ({onConfirm}) => {
@@ -16,21 +17,22 @@ const CheckoutForm = ({onConfirm}) => {
     }
 
     return (
-        <div className="Container">
-            <form onSubmit={handleConfirm} className="Form"></form>
-            <label className="Label">
+        <div className="formContainer">
+            <form onSubmit={handleConfirm} className="Form">
+            <label className="label">
             Nombre
-            <input type="text" className="Input" value={name} onChange={({target}) => setName(target.value)} />
+            <input type="text" className="input" value={name} onChange={({target}) => setName(target.value)} />
             </label>
-            <label className="Label">
+            <label className="label">
             Télefono
-            <input type="text" className="Input" value={phone} onChange={({target}) => setPhone(target.value)} />
+            <input type="text" className="input" value={phone} onChange={({target}) => setPhone(target.value)} />
             </label>
-            <label className="Label">
+            <label className="label">
             Email
-            <input type="text" className="Input" value={email} onChange={({target}) => setEmail(target.value)} />
+            <input type="text" className="input" value={email} onChange={({target}) => setEmail(target.value)} />
             </label>
-            <button >Finalizar compra</button>
+            <button className="sendForm">Finalizar compra</button>
+            </form>
         </div>
     )
 }

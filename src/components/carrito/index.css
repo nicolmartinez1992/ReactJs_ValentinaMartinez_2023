@@ -1,0 +1,40 @@
+.cartTitle{
+    text-align: center;
+}
+
+.cartContainer {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+background-color: rgb(227, 224, 224);
+margin-bottom: 30px;
+align-items: center;
+}
+
+.totalPrice{
+text-align: center;
+}
+
+.buttonsContainer{
+display: flex;
+justify-content: center;
+}
+
+.clearButton{
+    padding: 7px;
+    margin-right: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.orderButton{
+    padding: 7px;
+    margin-left: 20px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
