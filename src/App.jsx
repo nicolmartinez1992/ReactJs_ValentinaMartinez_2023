@@ -9,14 +9,14 @@ import Carrito from "./components/carrito";
 import Checkout from "./components/checkout";
 
 function App() {
-
+    
     return (
         <div>
         <CartProvider>
         <BrowserRouter>
         <NavBar />
         <Routes>
-        <Route path="/" element={<ItemListContainer/>}></Route>
+        <Route path="/" element={<ItemListContainer title="PRODUCTOS"/>}></Route>
         <Route path="/category/:categoryId" element={<ItemListContainer/>}></Route>
         <Route path="/item/:itemId" element={<ItemDetailContainer/>}></Route>
         <Route path="/carrito" element={<Carrito/>}></Route>

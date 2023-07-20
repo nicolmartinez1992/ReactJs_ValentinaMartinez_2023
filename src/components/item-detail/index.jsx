@@ -38,7 +38,7 @@ export default function ItemDetail({ img, title, price, description, category, s
                     Categoría: {category}
                 </Typography>
             </CardContent>
-            <CardActions style={{display: "flex", justifyContent: "center", marginBottom: "10px"}}>
+            <CardActions style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
                 {
                     quantityAdded > 0 ? (
                         <Link to="/carrito" className="finishButton">Terminar compra</Link>

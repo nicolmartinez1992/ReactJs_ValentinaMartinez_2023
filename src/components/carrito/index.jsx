@@ -10,11 +10,6 @@ const Carrito = () => {
         vaciarCarrito()
     }
 
-    // const handleSubmit = () => {
-    //     alert("Formulario enviado")
-
-    // }
-
     return (
         < div>
             <h1 className="cartTitle">Carrito</h1>
@@ -24,7 +19,7 @@ const Carrito = () => {
                         <h2>{prod.title}</h2>
                         <img width="200px" src={prod.img} alt="" />
                         <p>Precio unitario: ${prod.price}</p>
-                        <p>Precio total: ${prod.price*prod.items}</p>
+                        <p>Precio total: ${prod.price * prod.items}</p>
                         <p>Cantidad: {prod.items}</p>
                     </div>
                 ))
@@ -32,8 +27,8 @@ const Carrito = () => {
 
             <h2 className="totalPrice">Precio total: ${precioTotal()} </h2>
             <div className="buttonsContainer">
-            <button className="clearButton" onClick={handleVaciar}>Vaciar</button>
-            <Link className="orderButton" to="/checkout">Crear orden</Link>
+                <button className="clearButton" onClick={handleVaciar}>Vaciar</button>
+                <Link className="orderButton" to="/checkout">Crear orden</Link>
             </div>
         </div >
     )

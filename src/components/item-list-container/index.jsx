@@ -1,26 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react"
 import ItemList from "../item-list";
-import Title from "../title";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../services/firebase/firebaseConfig";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ title }) => {
     const [products, setProducts] = useState([])
     const { categoryId } = useParams()
-
-    // useEffect(() => {
-    //     const asyncFunction = categoryId ? getProductsByCategory : getProducts
-
-    //     asyncFunction(categoryId)
-    //     .then(response=> {
-    //         setProducts(response)
-    //     })
-    //     .catch(error=>{
-    //         console.log(error)
-    //     })
-    // },[categoryId])
 
     useEffect(() => {
         const collectionRef = categoryId
@@ -44,7 +31,7 @@ const ItemListContainer = () => {
         <div>
             <h1 className="productsTitle" style={{
                 textAlign: "center", marginBottom: "50px"
-            }}>PRODUCTOS</h1>
+            }}>{title}</h1>
             <ItemList products={products} />
         </div>
     )
