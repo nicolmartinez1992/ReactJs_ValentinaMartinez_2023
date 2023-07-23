@@ -13,6 +13,6 @@ A continuación se muestran las tecnologías utilizadas para el desarrollo de es
 --> INSTALACIÓN
 
     1. git clone https://github.com/nicolmartinez1992/ReactJs_ValentinaMartinez_2023.git
-    2. cd EntregaFinal_ReactJs/EntregaFinal_ReactJs
+    2. cd EntregaFinal_ReactJs
     3. npm install
     4. npm start
